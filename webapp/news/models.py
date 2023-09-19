@@ -8,9 +8,9 @@ class Articles(models.Model):
     full_text = models.TextField('Статья')
     date = models.DateTimeField('дата публикации')
 
-    def __str__(self): #зачем
-        return self.title
+    def __str__(self): # для красивого вывода записей
+        return self.title #указали что будет выводиться значение из поля title
 
-    class Meta:
+    class Meta: # указали правильные названия для таблиц
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
