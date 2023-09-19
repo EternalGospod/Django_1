@@ -8,7 +8,7 @@ class Articles(models.Model):
     full_text = models.TextField('Статья')
     date = models.DateTimeField('дата публикации')
 
-    def __str__(self):
+    def __str__(self): #зачем
         return self.title
 
     class Meta:
