@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Добавить запись {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Добавить запись</h1>
+        <form method="post" >
+            {% csrf_token %}
+            <input type="text" placeholder="Название статьи" class="from-control"><br>
+            <input type="text" placeholder="Анонс статьи" class="from-control"><br>
+            <textarea class="from-control" placeholder="Текст статьи"></textarea><br>
+            <input type="date" class="from-control"><br>
+            <input type="time" class="from-control"><br>
+            <button class="btn btn-success" type="submit">Добавить</button>
+        </form>
+
+
+    </div>
+{% endblock %}
