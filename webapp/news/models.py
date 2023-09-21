@@ -10,7 +10,8 @@ class Articles(models.Model):
 
     def __str__(self): # для красивого вывода записей
         return self.title #указали что будет выводиться значение из поля title
-
+    def get_absolute_url(self): # метод переадресации после редактирования
+        return f'/news/{self.id}'
     class Meta: # указали правильные названия для таблиц
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
