@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [] #те хосты на которых мы можем опуб
 # Application definition
 
 INSTALLED_APPS = [  # все приложения в проекте
+    'map',
     'main',
     'news',
     'django.contrib.admin',
