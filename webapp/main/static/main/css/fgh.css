@@ -1,25 +1,27 @@
 body{
     background: #2c2c2c;
+
+
 }
 
 aside{
-     float: left:
+     float: left;
      background: #191919;
-     width: 21%;
-     padding: 2.5%; /* отступы */
+     width: 12%;
+     padding: 2.1%; /* отступы */
      height: 100vh; /* 100% высоты экрана */
      color: #fff; /* цвет текста */
      border-right: 5px solid #4d4d4d; /* обводка размер и цвет */
 }
 
 aside img {
-    width: 140px;
+    width: 100%;
     float: left;
 }
 
 aside .logo {
-    font-size 40; /* razmer shrifta */
-    margin-left: 25px /* отступ с левой стороны */
+    font-size 40px; /* razmer shrifta */
+    margin-left: 0px; /* отступ с левой стороны */
     font-weight: bold; /* жирный шрифт */
     position: relative;
     top: 5px;
@@ -28,18 +30,20 @@ aside .logo {
 
 aside h3 {
     margin-top: 20px;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 aside ul {list-style: none}
-aside ul li {
+aside ul li { /*  обращаемся к эл-там списка боковой панели*/
     color: #fff;
     display: block;
-    margin-top: 20px
+    margin-top: 5px;
+    font-size: 100%;
+    margin-left: -25px;
     transition: transform .6s ease;
 }
 
-aside ul li:hover, aside ul a:hover {
+aside ul li:hover, aside ul a:hover { /* li and a  - теги из layout*/
     color: #eb5959;
     text-decoration: none;
     transform: scale(1.05);

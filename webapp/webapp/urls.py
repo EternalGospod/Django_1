@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),  #''- переход на галвную страницу (приложение мэйн)
     path('news/', include('news.urls')),  #приложение ньюс
-    path('map/', include('map.urls'))
+    path('map/', include('map.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
