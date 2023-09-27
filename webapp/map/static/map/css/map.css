@@ -20,6 +20,7 @@ main .map2 img {
     max-width: 100%;
     max-height: 100%;
     transition: transform 0.3s ease; /* Добавляем плавную анимацию изменения масштаба */
+
 }
 
 main .slider {
@@ -31,6 +32,16 @@ main .slider {
 /* Стилизация ползунка */
 #slider {
     width: 100%; /* Занимает всю ширину контейнера */
+}
+
+#pic {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main button {
+    margin: 10px;
 }
 
 main .features {
@@ -58,8 +69,8 @@ main .features p {max-width: 400px; margin: 20px auto}
     display: flex; /* Используем flex-контейнер */
     justify-content: center; /* Выравнивание по горизонтали по центру */
     align-items: center; /* Выравнивание по вертикали по центру */
-    width: 100%; /* Ширина элемента 100% (или какая вам нужна) */
-    height: 300px; /* Высота элемента (или какая вам нужна) */
+    width: 100%; /* Ширина элемента 100%  */
+    height: 300px; /* Высота элемента  */
 }
 
 .map1 img {

@@ -5,18 +5,29 @@
 
 {% block content %}
 
+<script src="{% static 'map/js/mouse_move.js' %}"></script>
+
+
     <div class="features" >
         <h1>Добро пожаловать в чудный мир </h1>
         <h1>Vinustera</h1>
     </div>
-    <div class="map2">
-        <img id="image" src="{% static 'map/img/map1.jpg' %}" alt="map1">
+
+    <div class="map2" id="map2">
+        <img id="image" src="{% static 'map/img/map1.jpg' %}" alt="map2">
 
     </div>
     <div class="slider">
         <input type="range" id="slider" min="1" max="5" step="0.005" value="1">
 
     </div>
+
+
+    <button id="moveLeft">Влево</button>
+    <button id="moveRight">Вправо</button>
+    <button id="moveUp">Вверх</button>
+    <button id="moveDown">Вниз</button>
+    <img id="pic" src="{% static 'map/img/i.webp' %}" alt="pic">
 
 
 {% endblock %}

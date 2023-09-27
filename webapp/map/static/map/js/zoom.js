@@ -6,4 +6,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const scale = slider.value;
         image.style.transform = `scale(${scale})`;
     });
+
 });
