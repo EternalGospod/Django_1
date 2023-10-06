@@ -1,35 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const pic = document.getElementById('pic');
+    const pic = document.getElementById('image');
     const moveLeftButton = document.getElementById('moveLeft');
     const moveRightButton = document.getElementById('moveRight');
     const moveUpButton = document.getElementById('moveUp');
     const moveDownButton = document.getElementById('moveDown');
+    const slider = document.getElementById('slider');
+    const markers = document.querySelectorAll(".marker");
 
-    // Установите начальные координаты для картинки в верхнем правом углу
-    pic.style.top = '0';
-    pic.style.right = '0';
-    pic.style.left = ''; // Очистите значение left
+    let intervalId = null;
+    let currentTop = 0;
+    let currentLeft = 0;
+    let scale = 1;
 
-    moveLeftButton.addEventListener('click', () => {
-        pic.style.right = ''; // Очистите значение right перед движением влево
-        const currentLeft = parseInt(pic.style.left || '0');
+    // Функция для движения влево
+    function moveLeft() {
+        currentLeft = parseInt(pic.style.left || '0');
+        pic.style.left = (currentLeft + 10) + 'px';
+    }
+
+    // Функция для движения вправо
+    function moveRight() {
+        currentLeft = parseInt(pic.style.left || '0');
         pic.style.left = (currentLeft - 10) + 'px';
-    });
+    }
 
-    moveRightButton.addEventListener('click', () => {
-        pic.style.left = ''; // Очистите значение left перед движением вправо
-        const currentRight = parseInt(pic.style.right || '0');
-        pic.style.right = (currentRight - 10) + 'px';
-    });
-
-    moveUpButton.addEventListener('click', () => {
-        const currentTop = parseInt(pic.style.top || '0');
-        pic.style.top = (currentTop - 10) + 'px';
-    });
-
-    moveDownButton.addEventListener('click', () => {
-        const currentTop = parseInt(pic.style.top || '0');
+    // Функция для движения вверх
+    function moveUp() {
+        currentTop = parseInt(pic.style.top || '0');
         pic.style.top = (currentTop + 10) + 'px';
+    }
+
+    // Функция для движения вниз
+    function moveDown() {
+        currentTop = parseInt(pic.style.top || '0');
+        pic.style.top = (currentTop - 10) + 'px';
+    }
+
+    // Добавляем обработчик события mousedown
+    moveLeftButton.addEventListener('mousedown', () => {
+        moveLeft();
+        intervalId = setInterval(moveLeft, 100); // Повторяем каждые 100 миллисекунд
     });
+
+    moveRightButton.addEventListener('mousedown', () => {
+        moveRight();
+        intervalId = setInterval(moveRight, 100);
+    });
+
+    moveUpButton.addEventListener('mousedown', () => {
+        moveUp();
+        intervalId = setInterval(moveUp, 100);
+    });
+
+    moveDownButton.addEventListener('mousedown', () => {
+        moveDown();
+        intervalId = setInterval(moveDown, 100);
+    });
+
+    // Добавляем обработчик события mouseup
+    document.addEventListener('mouseup', () => {
+        clearInterval(intervalId); // Остановить движение при отпускании кнопки
+    });
+
+
+
+    slider.addEventListener('input', () => {
+        scale = slider.value;
+        image.style.transform = `scale(${scale})`;
+        handleScaleChange();
+    });
+
+    function hideMarkers() {
+        markers.forEach(marker => {
+            marker.style.display = "none"; // Скрываем маркеры
+            marker.style.pointerEvents = "none"; // Делаем маркеры недоступными для взаимодействия
+        });
+    }
+
+    // Функция, которая показывает маркеры
+    function showMarkers() {
+        markers.forEach(marker => {
+            marker.style.display = "block"; // Показываем маркеры
+            marker.style.pointerEvents = "pointer"; // Делаем маркеры доступными для взаимодействия
+        });
+    }
+
+    // Функция для обработки изменений переменной scale
+    function handleScaleChange() {
+        if (scale > 1.09) {
+            hideMarkers(); // Если scale больше 1, скрываем маркеры
+        } else {
+            showMarkers(); // В противном случае показываем маркеры
+        }
+    }
+
+    // Вызываем функцию обработки изменений переменной scale при инициализации
+
+
+
 
 });

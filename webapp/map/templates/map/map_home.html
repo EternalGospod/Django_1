@@ -14,7 +14,10 @@
     </div>
 
     <div class="map2" id="map2">
-        <img id="image" src="{% static 'map/img/map1.jpg' %}" alt="map2">
+        <img id="image" src="{% static 'map/img/map1.jpg' %}" alt="map2" class="bp">
+
+        <img id="marker1" src="{% static 'map/img/location.png' %}" alt="marker1" class="marker" cursor="pointer">
+
 
     </div>
     <div class="slider">
@@ -22,12 +25,13 @@
 
     </div>
 
+    <div class="remote">
+        <button class="buttons_map" id="moveLeft">Влево</button>
+        <button class="buttons_map" id="moveRight">Вправо</button>
+        <button class="buttons_map" id="moveUp">Вверх</button>
+        <button class="buttons_map" id="moveDown">Вниз</button>
+    </div>
 
-    <button id="moveLeft">Влево</button>
-    <button id="moveRight">Вправо</button>
-    <button id="moveUp">Вверх</button>
-    <button id="moveDown">Вниз</button>
-    <img id="pic" src="{% static 'map/img/i.webp' %}" alt="pic">
 
 
 {% endblock %}
