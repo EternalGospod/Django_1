@@ -15,8 +15,9 @@
 
     <div class="map2" id="map2">
         <img id="image" src="{% static 'map/img/map1.jpg' %}" alt="map2" class="bp">
-
-        <img id="marker1" src="{% static 'map/img/location.png' %}" alt="marker1" class="marker" cursor="pointer">
+        <a href="{% url 'greenfield' 1 %}">
+            <img id="marker1" src="{% static 'map/img/location.png' %}" alt="marker1" class="marker" cursor="pointer">
+        </a>
 
 
     </div>

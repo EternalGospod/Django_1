@@ -8,7 +8,7 @@ def news_home(request):
     return render(request, 'news/news_home.html', {'news' : news})  #по ключу ньюс передаем обьект ньюс
 
 class NewsDetailView(DetailView):
-    model =Articles
+    model = Articles
     template_name = 'news/details_view.html'
     context_object_name = 'article' # ключ по кторому мы передаем обьект внутрь шаблона
 
